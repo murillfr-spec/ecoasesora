@@ -1,0 +1,52 @@
+﻿
+> ecoasesora@0.0.0 dev
+> tsx server.ts
+
+node.exe : C:\Users\muril\Documents\Emil Kow\Ecoasesora\node_modules\rollup\dist\native.js:121
+En C:\Program Files\nodejs\npm.ps1: 30 Carácter: 3
++   & $NODE_EXE $NPM_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\muril\...t\native.js:121:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+		throw new Error(
+		      ^
+
+Error: Cannot find module @rollup/rollup-win32-x64-msvc. npm has a bug related to optional dependencies 
+(https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and 
+node_modules directory.
+    at requireWithFriendlyError (C:\Users\muril\Documents\Emil Kow\Ecoasesora\node_modules\rollup\dist\native.js:121:9)
+    at Object.<anonymous> (C:\Users\muril\Documents\Emil Kow\Ecoasesora\node_modules\rollup\dist\native.js:130:76)
+    at Module._compile (node:internal/modules/cjs/loader:1872:14)
+    at Object.transformer (C:\Users\muril\Documents\Emil 
+Kow\Ecoasesora\node_modules\tsx\dist\register-OY9cqBEN.cjs:9:3619)
+    at Module.load (node:internal/modules/cjs/loader:1594:32)
+    at Module._load (node:internal/modules/cjs/loader:1396:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at loadCJSModuleWithModuleLoad (node:internal/modules/esm/translators:372:15)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:244:9)
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25) {
+  [cause]: Error: Cannot find module 'C:\Users\muril\Documents\Emil 
+Kow\Ecoasesora\node_modules\@rollup\rollup-win32-x64-msvc\rollup.win32-x64-msvc.node'. Please verify that the 
+package.json has a valid "main" entry
+      at tryPackage (node:internal/modules/cjs/loader:553:19)
+      at Module._findPath (node:internal/modules/cjs/loader:821:18)
+      at node:internal/modules/cjs/loader:1502:27
+      at nextResolveSimple (C:\Users\muril\Documents\Emil 
+Kow\Ecoasesora\node_modules\tsx\dist\register-OY9cqBEN.cjs:10:1006)
+      at C:\Users\muril\Documents\Emil Kow\Ecoasesora\node_modules\tsx\dist\register-OY9cqBEN.cjs:9:4959
+      at C:\Users\muril\Documents\Emil Kow\Ecoasesora\node_modules\tsx\dist\register-OY9cqBEN.cjs:9:4261
+      at resolveTsPaths (C:\Users\muril\Documents\Emil 
+Kow\Ecoasesora\node_modules\tsx\dist\register-OY9cqBEN.cjs:10:759)
+      at C:\Users\muril\Documents\Emil Kow\Ecoasesora\node_modules\tsx\dist\register-OY9cqBEN.cjs:10:1199
+      at j._resolveFilename 
+(file:///C:/Users/muril/Documents/Emil%20Kow/Ecoasesora/node_modules/tsx/dist/register-SoqaU4rg.mjs:2:17957)
+      at wrapResolveFilename (node:internal/modules/cjs/loader:1071:27) {
+    code: 'MODULE_NOT_FOUND',
+    path: '\\\\?\\C:\\Users\\muril\\Documents\\Emil 
+Kow\\Ecoasesora\\node_modules\\@rollup\\rollup-win32-x64-msvc\\package.json',
+    requestPath: '@rollup/rollup-win32-x64-msvc'
+  }
+}
+
+Node.js v24.19.0
