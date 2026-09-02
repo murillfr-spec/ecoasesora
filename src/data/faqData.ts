@@ -18,10 +18,6 @@ export const FAQ_DATA: FaqItem[] = [
     answer: 'Sí, nuestro horario de atención es 24 horas, todos los días de la semana, para recogidas urgentes de residuos, reciclaje y destrucción confidencial.',
   },
   {
-    question: '¿Trabajan con administradores concursales?',
-    answer: 'Sí, prestamos servicios especializados de gestión profesional de bienes y activos en procesos concursales, coordinando la valorización, retirada o destrucción según cada caso.',
-  },
-  {
     question: '¿Qué incluye el servicio de vaciado de locales, naves y pisos?',
     answer: 'Incluye el desalojo completo y la limpieza de espacios comerciales, industriales y residenciales, con separación y reciclaje del material recuperable siempre que sea posible.',
   },

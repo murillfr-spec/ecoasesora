@@ -6,14 +6,84 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ecoasesora.com/#servicios</loc>
+    <loc>https://ecoasesora.com/servicios/destruccion-confidencial</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ecoasesora.com/#por-que-elegirnos</loc>
+    <loc>https://ecoasesora.com/servicios/destruccion-confidencial/destruccion-de-materiales-confidenciales</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ecoasesora.com/servicios/destruccion-confidencial/destruccion-de-discos-duros</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ecoasesora.com/servicios/destruccion-confidencial/destruccion-de-radiografias</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ecoasesora.com/servicios/gestion-de-residuos</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ecoasesora.com/servicios/gestion-de-residuos/destruccion-de-mercaderias-aduaneras</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ecoasesora.com/servicios/gestion-de-residuos/residuos-peligrosos</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ecoasesora.com/servicios/gestion-de-residuos/residuos-liquidos</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ecoasesora.com/servicios/gestion-de-residuos/limpieza-decantadores-de-grasas</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ecoasesora.com/servicios/gestion-de-residuos/residuos-solidos-especiales</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ecoasesora.com/servicios/gestion-de-residuos/contenedores-de-residuos</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ecoasesora.com/servicios/reciclaje-y-vaciado</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ecoasesora.com/servicios/reciclaje-y-vaciado/reciclaje-de-oficina</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ecoasesora.com/servicios/reciclaje-y-vaciado/vaciado-de-locales-naves-y-pisos</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ecoasesora.com/servicios/reciclaje-y-vaciado/recogida-de-muebles</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ecoasesora.com/servicios/reciclaje-y-vaciado/vaciado-de-trasteros-y-almacenes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ecoasesora.com/#nosotros</loc>

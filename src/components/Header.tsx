@@ -1,76 +1,123 @@
-import React, { useState } from 'react';
-import { Phone, MapPin, Clock, Menu, X } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Facebook, Instagram, Linkedin, Menu, X, ChevronDown, Phone } from 'lucide-react';
 import companyLogo from '../assets/images/ecoasesora_logo.png';
+import { SERVICE_CATEGORIES } from '../data/servicesData';
 
 const NAV_ITEMS = [
-  { href: '#servicios', label: 'Servicios' },
-  { href: '#por-que-elegirnos', label: 'Por Qué Elegirnos' },
-  { href: '#nosotros', label: 'Sobre Nosotros' },
-  { href: '#faq', label: 'Preguntas Frecuentes' },
-  { href: '#contacto', label: 'Contacto' },
+  { href: '/#nosotros', label: 'Sobre Nosotros' },
+  { href: '/#faq', label: 'Preguntas' },
+  { href: '/#contacto', label: 'Contacto' },
 ];
 
 export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const solid = scrolled || mobileMenuOpen;
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md border-b border-slate-200">
-      <div className="bg-slate-900 text-slate-300 text-xs sm:text-sm py-2 px-4 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs">
-            <a
-              href="tel:+34685911111"
-              className="flex items-center gap-1.5 text-emerald-400 font-bold hover:text-emerald-300 transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5 animate-pulse" />
-              <span>685 91 11 11 (Atención 24h)</span>
-            </a>
-            <div className="hidden md:flex items-center gap-1.5 text-slate-400">
-              <MapPin className="w-3.5 h-3.5" />
-              <span>Carrer del Comerç, 30 · Sant Feliu de Llobregat, Barcelona</span>
-            </div>
-          </div>
-          <span className="inline-flex items-center gap-1 text-emerald-400 bg-emerald-950/60 border border-emerald-800/80 px-2 py-0.5 rounded text-[11px] font-medium">
-            <Clock className="w-3 h-3" /> Abierto 24 horas
-          </span>
-        </div>
-      </div>
-
+    <header
+      className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${
+        solid ? 'bg-white shadow-md' : 'bg-transparent'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between min-h-[84px] h-auto py-2">
-          <a href="#inicio" className="flex items-center gap-3 group shrink-0">
+        <div className="flex items-center justify-between h-20">
+          <a href="/" className="flex items-center gap-2.5 shrink-0">
             <img
               src={companyLogo}
               alt="Ecoasesora"
-              className="h-14 sm:h-16 w-auto object-contain group-hover:scale-105 transition-transform"
+              className={`h-11 sm:h-12 w-auto object-contain transition-all ${solid ? '' : 'brightness-0 invert drop-shadow'}`}
             />
           </a>
 
-          <nav className="hidden lg:flex items-center gap-1 text-sm font-semibold text-slate-700">
+          <nav
+            className={`hidden lg:flex items-center gap-1 text-sm font-bold uppercase tracking-wide transition-colors ${
+              solid ? 'text-neutral-700' : 'text-white'
+            }`}
+          >
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <a
+                href="/#servicios"
+                className={`flex items-center gap-1 px-4 py-2 rounded-full transition-colors ${
+                  solid ? 'hover:bg-neutral-100' : 'hover:bg-white/10'
+                }`}
+              >
+                Servicios
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+              </a>
+              {servicesOpen && (
+                <div className="absolute top-full left-0 w-72 bg-white shadow-xl rounded-xl border border-neutral-200 py-2 normal-case">
+                  {SERVICE_CATEGORIES.map((s) => (
+                    <a
+                      key={s.slug}
+                      href={`/servicios/${s.slug}`}
+                      className="block px-4 py-2.5 text-sm font-semibold text-neutral-700 hover:bg-green-50 hover:text-green-700 transition-colors"
+                    >
+                      {s.title}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="px-3 py-2 rounded-lg hover:bg-slate-100 transition-colors"
+                className={`px-4 py-2 rounded-full transition-colors ${
+                  solid ? 'hover:bg-neutral-100' : 'hover:bg-white/10'
+                }`}
               >
                 {item.label}
               </a>
             ))}
           </nav>
 
-          <div className="hidden sm:flex items-center gap-2">
+          <div className="hidden sm:flex items-center gap-4">
             <a
-              href="#contacto"
-              className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+              href="tel:+34685911111"
+              className={`hidden xl:flex items-center gap-2 text-sm font-bold transition-colors ${
+                solid ? 'text-neutral-800 hover:text-green-600' : 'text-white hover:text-green-300'
+              }`}
             >
               <Phone className="w-4 h-4" />
-              <span>Solicitar Presupuesto</span>
+              685 91 11 11
+            </a>
+            <div className={`hidden xl:flex items-center gap-2 ${solid ? 'text-neutral-500' : 'text-white/80'}`}>
+              <a href="https://facebook.com" aria-label="Facebook" className="w-8 h-8 rounded-full border border-current flex items-center justify-center hover:text-green-500 hover:border-green-500 transition-colors">
+                <Facebook className="w-3.5 h-3.5" />
+              </a>
+              <a href="https://instagram.com" aria-label="Instagram" className="w-8 h-8 rounded-full border border-current flex items-center justify-center hover:text-green-500 hover:border-green-500 transition-colors">
+                <Instagram className="w-3.5 h-3.5" />
+              </a>
+              <a href="https://linkedin.com" aria-label="LinkedIn" className="w-8 h-8 rounded-full border border-current flex items-center justify-center hover:text-green-500 hover:border-green-500 transition-colors">
+                <Linkedin className="w-3.5 h-3.5" />
+              </a>
+            </div>
+            <a
+              href="/#contacto"
+              className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-xs sm:text-sm font-bold px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all"
+            >
+              Contactar
             </a>
           </div>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none"
+            className={`lg:hidden p-2 rounded-lg focus:outline-none ${solid ? 'text-neutral-800' : 'text-white'}`}
             aria-label="Abrir menú"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -79,23 +126,43 @@ export const Header: React.FC = () => {
       </div>
 
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-1">
+        <div className="lg:hidden bg-white border-t border-neutral-200 px-4 pt-2 pb-6 space-y-1 shadow-lg">
+          <a
+            href="tel:+34685911111"
+            className="flex items-center gap-2 px-3 py-2.5 text-green-600 font-bold text-sm"
+          >
+            <Phone className="w-4 h-4" />
+            685 91 11 11
+          </a>
+          <div className="pb-1">
+            <span className="block px-3 pt-2 pb-1 text-xs font-bold text-neutral-400 uppercase tracking-wider">Servicios</span>
+            {SERVICE_CATEGORIES.map((s) => (
+              <a
+                key={s.slug}
+                href={`/servicios/${s.slug}`}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-3 py-2 rounded-lg hover:bg-neutral-100 text-neutral-700 text-sm"
+              >
+                {s.title}
+              </a>
+            ))}
+          </div>
           {NAV_ITEMS.map((item) => (
             <a
               key={item.href}
               href={item.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2.5 rounded-lg hover:bg-slate-100 text-slate-800 font-medium"
+              className="block px-3 py-2.5 rounded-lg hover:bg-neutral-100 text-neutral-800 font-semibold"
             >
               {item.label}
             </a>
           ))}
           <a
-            href="#contacto"
+            href="/#contacto"
             onClick={() => setMobileMenuOpen(false)}
-            className="block w-full text-center bg-emerald-600 text-white font-bold text-sm py-3 rounded-full shadow mt-3"
+            className="block w-full text-center bg-green-500 text-white font-bold text-sm py-3 rounded-full shadow mt-3"
           >
-            Solicitar Presupuesto
+            Contactar
           </a>
         </div>
       )}

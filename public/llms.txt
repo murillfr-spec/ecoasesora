@@ -1,16 +1,30 @@
 # Ecoasesora - Reciclaje y Gestión de Residuos en Barcelona
 
 > Sitio web: https://ecoasesora.com
-> Servicios: Destrucción confidencial de documentos (Normativa UNE 15713), gestión de residuos (mercaderías aduaneras, residuos peligrosos, residuos líquidos, decantadores de grasas), reciclaje y vaciado (oficina, locales, naves y pisos) y servicios especializados (administradores concursales, desatrancos, camiones cuba).
+> Servicios: Destrucción confidencial de documentos, discos duros y radiografías (Normativa UNE 15713); gestión de residuos (mercaderías aduaneras, residuos peligrosos, líquidos y sólidos especiales, decantadores de grasas, alquiler de contenedores); y reciclaje y vaciado (oficina, locales, naves, pisos, muebles y trasteros).
 > Contacto: info@ecoasesora.com | Teléfono: +34 685 91 11 11
 > Ubicación: Carrer del Comerç, 30, Sant Feliu de Llobregat, Barcelona, España. Abierto 24 horas.
 
 ## Resumen de la Empresa
-Ecoasesora es una empresa de reciclaje y gestión de residuos con más de 20 años de experiencia, con sede en Sant Feliu de Llobregat y cobertura en el área metropolitana de Barcelona. Ofrece destrucción confidencial certificada de documentos y soportes digitales, gestión de residuos peligrosos y líquidos, reciclaje de oficina, vaciado de locales y naves, y servicios especializados como apoyo a administradores concursales, desatrancos y transporte en camiones cuba. Atención disponible 24 horas los 7 días de la semana.
+Ecoasesora es una empresa de reciclaje y gestión de residuos con más de 20 años de experiencia, con sede en Barcelona. Ofrece destrucción confidencial certificada de documentos, discos duros y radiografías, gestión de residuos peligrosos, líquidos y sólidos, y reciclaje de oficina y vaciado de locales, naves, pisos, trasteros y muebles. Atención disponible 24 horas los 7 días de la semana.
 
 ## Páginas importantes
-- https://ecoasesora.com/#servicios
-- https://ecoasesora.com/#por-que-elegirnos
+- https://ecoasesora.com/servicios/destruccion-confidencial
+- https://ecoasesora.com/servicios/destruccion-confidencial/destruccion-de-materiales-confidenciales
+- https://ecoasesora.com/servicios/destruccion-confidencial/destruccion-de-discos-duros
+- https://ecoasesora.com/servicios/destruccion-confidencial/destruccion-de-radiografias
+- https://ecoasesora.com/servicios/gestion-de-residuos
+- https://ecoasesora.com/servicios/gestion-de-residuos/destruccion-de-mercaderias-aduaneras
+- https://ecoasesora.com/servicios/gestion-de-residuos/residuos-peligrosos
+- https://ecoasesora.com/servicios/gestion-de-residuos/residuos-liquidos
+- https://ecoasesora.com/servicios/gestion-de-residuos/limpieza-decantadores-de-grasas
+- https://ecoasesora.com/servicios/gestion-de-residuos/residuos-solidos-especiales
+- https://ecoasesora.com/servicios/gestion-de-residuos/contenedores-de-residuos
+- https://ecoasesora.com/servicios/reciclaje-y-vaciado
+- https://ecoasesora.com/servicios/reciclaje-y-vaciado/reciclaje-de-oficina
+- https://ecoasesora.com/servicios/reciclaje-y-vaciado/vaciado-de-locales-naves-y-pisos
+- https://ecoasesora.com/servicios/reciclaje-y-vaciado/recogida-de-muebles
+- https://ecoasesora.com/servicios/reciclaje-y-vaciado/vaciado-de-trasteros-y-almacenes
 - https://ecoasesora.com/#nosotros
 - https://ecoasesora.com/#faq
 - https://ecoasesora.com/#contacto

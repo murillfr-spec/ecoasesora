@@ -1,100 +1,175 @@
-import { ServiceCategory, ValueProp, Stat } from '../types';
+import { ServiceCategory, Stat } from '../types';
 
 export const SERVICE_CATEGORIES: ServiceCategory[] = [
   {
     id: 'destruccion-confidencial',
+    slug: 'destruccion-confidencial',
     iconName: 'ShieldCheck',
     title: 'Destrucción Confidencial',
     description: 'Trituración segura de documentos y soportes, cumpliendo la Normativa UNE 15713.',
+    longDescription: 'En Ecoasesora ofrecemos un servicio integral de destrucción confidencial de documentos, papel y soportes digitales para empresas, despachos y administraciones en Barcelona. Trituramos cada material de forma irrecuperable, cumpliendo estrictamente la Normativa UNE 15713 y la normativa de protección de datos vigente, para que tu empresa quede protegida ante cualquier fuga de información.',
+    seoTitle: 'Destrucción Confidencial de Documentos en Barcelona | Ecoasesora',
+    seoDescription: 'Servicio de destrucción confidencial de documentos y soportes digitales en Barcelona, certificado según la Normativa UNE 15713. Recogida y trituración segura.',
     items: [
       {
+        slug: 'destruccion-de-materiales-confidenciales',
         title: 'Destrucción de materiales confidenciales',
         description: 'Trituración certificada de papel, documentación sensible y soportes digitales con garantía de irreconstrucción.',
+        longDescription: 'Destruimos de forma certificada todo tipo de material confidencial: documentación en papel, expedientes, carpetas y soportes digitales como discos duros o memorias USB. Cada proceso se realiza con maquinaria de trituración industrial que garantiza la irreconstrucción total del material, cumpliendo la Normativa UNE 15713 y la normativa de protección de datos vigente.',
+        seoTitle: 'Destrucción de Materiales Confidenciales en Barcelona | Ecoasesora',
+        seoDescription: 'Trituración certificada de papel, documentación sensible y soportes digitales en Barcelona. Garantía de irreconstrucción según la Normativa UNE 15713.',
+      },
+      {
+        slug: 'destruccion-de-discos-duros',
+        title: 'Destrucción de discos duros y soportes digitales',
+        description: 'Eliminación física y permanente de discos duros, USB y otros soportes digitales con datos sensibles.',
+        longDescription: 'Destruimos de forma física y permanente discos duros, memorias USB, tarjetas de memoria y otros soportes digitales que contengan información sensible. El proceso garantiza que los datos queden completamente irrecuperables, cumpliendo la Normativa UNE 15713 y la normativa de protección de datos vigente.',
+        seoTitle: 'Destrucción de Discos Duros y Soportes Digitales en Barcelona | Ecoasesora',
+        seoDescription: 'Destrucción física y permanente de discos duros, USB y soportes digitales en Barcelona. Datos irrecuperables, certificado según la Normativa UNE 15713.',
+      },
+      {
+        slug: 'destruccion-de-radiografias',
+        title: 'Destrucción de radiografías y material sanitario',
+        description: 'Eliminación segura de placas radiográficas y material sanitario sensible, con tratamiento especializado.',
+        longDescription: 'Ofrecemos un servicio especializado de destrucción de radiografías y material sanitario sensible, un tipo de residuo difícil de reciclar por métodos convencionales. Garantizamos un tratamiento seguro y conforme a la normativa, protegiendo la confidencialidad de los datos de pacientes que puedan contener.',
+        seoTitle: 'Destrucción de Radiografías en Barcelona | Ecoasesora',
+        seoDescription: 'Destrucción segura de radiografías y material sanitario sensible en Barcelona, con tratamiento especializado y confidencial.',
+      },
+    ],
+    faqs: [
+      {
+        question: '¿Qué tipo de documentos y soportes pueden destruir?',
+        answer: 'Trituramos papel, carpetas, documentación sensible y soportes digitales como discos duros o pendrives, garantizando que la información quede completamente irrecuperable.',
+      },
+      {
+        question: '¿La destrucción confidencial cumple con la normativa vigente?',
+        answer: 'Sí, todo el proceso se realiza conforme a la Normativa UNE 15713, la referencia en destrucción segura de información confidencial.',
       },
     ],
   },
   {
     id: 'gestion-residuos',
+    slug: 'gestion-de-residuos',
     iconName: 'Recycle',
     title: 'Gestión de Residuos',
     description: 'Eliminación segura y trazable de todo tipo de residuos, cumpliendo la normativa vigente.',
+    longDescription: 'Gestionamos de forma segura y trazable todo tipo de residuos industriales, peligrosos y líquidos en Barcelona. Desde mercaderías retenidas por aduanas hasta la limpieza de decantadores de grasas, contamos con los medios técnicos y las autorizaciones necesarias para garantizar el cumplimiento normativo en cada servicio.',
+    seoTitle: 'Gestión de Residuos Industriales y Peligrosos en Barcelona | Ecoasesora',
+    seoDescription: 'Gestión segura de residuos peligrosos, líquidos y mercaderías aduaneras en Barcelona. Servicios certificados y trazables para empresas.',
     items: [
       {
+        slug: 'destruccion-de-mercaderias-aduaneras',
         title: 'Destrucción de mercaderías aduaneras',
         description: 'Eliminación segura de productos retenidos por aduanas con procesos certificados.',
+        longDescription: 'Gestionamos la destrucción segura de mercaderías retenidas por aduanas, garantizando un proceso trazable y certificado de principio a fin. Trabajamos con los protocolos exigidos para la eliminación de productos decomisados, protegiendo a tu empresa ante cualquier responsabilidad legal.',
+        seoTitle: 'Destrucción de Mercaderías Aduaneras en Barcelona | Ecoasesora',
+        seoDescription: 'Eliminación certificada de productos retenidos por aduanas en Barcelona, con procesos seguros y trazables que cumplen la normativa vigente.',
       },
       {
+        slug: 'residuos-peligrosos',
         title: 'Residuos peligrosos',
         description: 'Manejo y disposición responsable de residuos peligrosos, cumpliendo normativas de seguridad.',
+        longDescription: 'Nos encargamos del manejo, transporte y disposición final de residuos peligrosos con total seguridad para tu empresa y el medio ambiente. Cumplimos estrictamente la normativa de seguridad vigente en cada fase del proceso, desde la recogida hasta la eliminación certificada.',
+        seoTitle: 'Gestión de Residuos Peligrosos en Barcelona | Ecoasesora',
+        seoDescription: 'Manejo, transporte y eliminación responsable de residuos peligrosos en Barcelona, cumpliendo la normativa de seguridad y medioambiental vigente.',
       },
       {
+        slug: 'residuos-liquidos',
         title: 'Servicio de residuos líquidos',
         description: 'Recogida y tratamiento eficiente de residuos líquidos industriales y domésticos.',
+        longDescription: 'Ofrecemos recogida y tratamiento eficiente de residuos líquidos, tanto industriales como domésticos. Contamos con los medios técnicos necesarios para gestionar cualquier volumen, garantizando un tratamiento respetuoso con el medio ambiente y conforme a la normativa vigente.',
+        seoTitle: 'Gestión de Residuos Líquidos en Barcelona | Ecoasesora',
+        seoDescription: 'Recogida y tratamiento de residuos líquidos industriales y domésticos en Barcelona. Servicio rápido, seguro y conforme a la normativa.',
       },
       {
+        slug: 'limpieza-decantadores-de-grasas',
         title: 'Limpieza de decantadores de grasas',
         description: 'Mantenimiento profesional para prevenir obstrucciones en sistemas de separación.',
+        longDescription: 'Realizamos el mantenimiento y limpieza profesional de decantadores de grasas para hostelería e industria alimentaria, previniendo obstrucciones, malos olores e incumplimientos normativos. Establecemos una periodicidad de mantenimiento adaptada al volumen de uso de tu negocio.',
+        seoTitle: 'Limpieza de Decantadores de Grasas en Barcelona | Ecoasesora',
+        seoDescription: 'Mantenimiento y limpieza profesional de decantadores de grasas en Barcelona para prevenir obstrucciones y malos olores.',
+      },
+      {
+        slug: 'residuos-solidos-especiales',
+        title: 'Gestión de residuos sólidos especiales',
+        description: 'Recogida y tratamiento de residuos sólidos industriales especiales, cumpliendo la normativa de gestión de residuos.',
+        longDescription: 'Gestionamos la recogida, transporte y tratamiento de residuos sólidos industriales especiales, adaptándonos al tipo y volumen generado por tu actividad. Contamos con los medios técnicos y las autorizaciones necesarias para garantizar una gestión segura y conforme a la normativa vigente.',
+        seoTitle: 'Gestión de Residuos Sólidos Especiales en Barcelona | Ecoasesora',
+        seoDescription: 'Recogida y tratamiento de residuos sólidos industriales especiales en Barcelona. Servicio autorizado y conforme a la normativa vigente.',
+      },
+      {
+        slug: 'contenedores-de-residuos',
+        title: 'Alquiler de contenedores para residuos',
+        description: 'Contenedores de distintos tamaños para la recogida periódica o puntual de residuos en tu empresa.',
+        longDescription: 'Ponemos a tu disposición contenedores de distintos tamaños para la recogida periódica o puntual de residuos, adaptados al volumen y tipo de actividad de tu empresa. Nos encargamos de la retirada, el transporte y el tratamiento final conforme a la normativa vigente.',
+        seoTitle: 'Alquiler de Contenedores de Residuos en Barcelona | Ecoasesora',
+        seoDescription: 'Contenedores de distintos tamaños para la recogida de residuos en tu empresa en Barcelona. Servicio periódico o puntual, con retirada incluida.',
+      },
+    ],
+    faqs: [
+      {
+        question: '¿Gestionan residuos peligrosos y mercaderías retenidas por aduanas?',
+        answer: 'Sí, ofrecemos manejo y eliminación certificada de residuos peligrosos, así como destrucción de productos retenidos por aduanas, cumpliendo la normativa de seguridad aplicable.',
+      },
+      {
+        question: '¿Con qué frecuencia se debe limpiar un decantador de grasas?',
+        answer: 'Depende del volumen de uso, pero recomendamos un mantenimiento periódico para evitar obstrucciones y malos olores; nuestro equipo te ayuda a definir la frecuencia adecuada.',
       },
     ],
   },
   {
     id: 'reciclaje-vaciado',
+    slug: 'reciclaje-y-vaciado',
     iconName: 'Trash2',
     title: 'Reciclaje y Vaciado',
     description: 'Recogida, reciclaje y desalojo integral para entornos laborales y espacios en desuso.',
+    longDescription: 'Facilitamos la recogida y reciclaje de papel, cartón y plásticos en entornos de oficina, además del vaciado integral de locales, naves y pisos en Barcelona. Un servicio pensado para empresas y particulares que necesitan liberar espacios de forma rápida, ordenada y respetuosa con el medio ambiente.',
+    seoTitle: 'Reciclaje de Oficina y Vaciado de Locales en Barcelona | Ecoasesora',
+    seoDescription: 'Servicio de reciclaje de papel y cartón de oficina, y vaciado de locales, naves y pisos en Barcelona. Recogida rápida y reciclaje responsable.',
     items: [
       {
+        slug: 'reciclaje-de-oficina',
         title: 'Servicio de reciclaje de oficina',
         description: 'Recogida y reciclaje de papel, cartón, plásticos y más, para entornos laborales.',
+        longDescription: 'Facilitamos la recogida periódica de papel, cartón y plásticos en entornos de oficina, ayudando a tu empresa a cumplir con sus objetivos de sostenibilidad. Adaptamos la frecuencia de recogida al volumen generado por tu negocio.',
+        seoTitle: 'Reciclaje de Oficina en Barcelona | Ecoasesora',
+        seoDescription: 'Recogida y reciclaje de papel, cartón y plásticos en oficinas de Barcelona. Servicio periódico adaptado a tu negocio.',
       },
       {
+        slug: 'vaciado-de-locales-naves-y-pisos',
         title: 'Vaciado de locales, naves y pisos',
         description: 'Desalojo completo y limpieza de espacios comerciales, industriales y residenciales.',
+        longDescription: 'Realizamos el desalojo completo y la limpieza de locales comerciales, naves industriales y pisos en Barcelona. Separamos y reciclamos el material recuperable siempre que es posible, dejando el espacio listo para su nuevo uso.',
+        seoTitle: 'Vaciado de Locales, Naves y Pisos en Barcelona | Ecoasesora',
+        seoDescription: 'Desalojo y limpieza completa de locales, naves industriales y pisos en Barcelona, con reciclaje del material recuperable.',
+      },
+      {
+        slug: 'recogida-de-muebles',
+        title: 'Recogida y reciclaje de muebles',
+        description: 'Retirada de muebles y enseres en desuso, con reciclaje responsable del material recuperable.',
+        longDescription: 'Retiramos muebles y enseres en desuso de oficinas, locales y viviendas, dando prioridad al reciclaje y la reutilización del material siempre que sea posible. Un servicio pensado para empresas y particulares que necesitan liberar espacio de forma rápida y responsable con el medio ambiente.',
+        seoTitle: 'Recogida y Reciclaje de Muebles en Barcelona | Ecoasesora',
+        seoDescription: 'Retirada de muebles y enseres en oficinas, locales y viviendas de Barcelona, con reciclaje responsable del material recuperable.',
+      },
+      {
+        slug: 'vaciado-de-trasteros-y-almacenes',
+        title: 'Vaciado de trasteros y almacenes',
+        description: 'Desalojo completo de trasteros y almacenes, con separación y reciclaje del material recuperable.',
+        longDescription: 'Realizamos el vaciado completo de trasteros y almacenes en Barcelona, separando y reciclando el material recuperable siempre que es posible. Un servicio ágil pensado para particulares y empresas que necesitan liberar espacios de almacenamiento de forma ordenada.',
+        seoTitle: 'Vaciado de Trasteros y Almacenes en Barcelona | Ecoasesora',
+        seoDescription: 'Desalojo completo de trasteros y almacenes en Barcelona, con separación y reciclaje del material recuperable.',
       },
     ],
-  },
-  {
-    id: 'servicios-especializados',
-    iconName: 'Wrench',
-    title: 'Servicios Especializados',
-    description: 'Soluciones a medida para necesidades técnicas y legales concretas.',
-    items: [
+    faqs: [
       {
-        title: 'Administradores concursales',
-        description: 'Gestión profesional de bienes y activos en procesos concursales.',
+        question: '¿Qué incluye el servicio de vaciado de locales, naves y pisos?',
+        answer: 'Incluye el desalojo completo y la limpieza del espacio, con separación y reciclaje del material recuperable siempre que sea posible.',
       },
       {
-        title: 'Servicios de desatrancos',
-        description: 'Desobstrucción rápida y eficaz de tuberías y sistemas de drenaje.',
-      },
-      {
-        title: 'Camiones cuba',
-        description: 'Transporte especializado de líquidos y residuos en contenedores seguros.',
+        question: '¿Recogen el material de reciclaje directamente en la oficina?',
+        answer: 'Sí, recogemos papel, cartón y plásticos directamente en tu oficina o local, con la periodicidad que necesites.',
       },
     ],
-  },
-];
-
-export const VALUE_PROPS: ValueProp[] = [
-  {
-    iconName: 'Leaf',
-    title: 'Compromiso Real y Medible',
-    description: 'Tu impacto ambiental, minimizado. Operamos con una flota de bajas emisiones y materiales 100% sostenibles.',
-  },
-  {
-    iconName: 'Clock',
-    title: 'Tranquilidad 24/7',
-    description: 'Más de 20 años de experiencia a tu servicio. Nuestro equipo experto te respalda día y noche.',
-  },
-  {
-    iconName: 'Settings2',
-    title: 'Soluciones a Tu Medida',
-    description: 'Olvídate de los planes genéricos. Diseñamos una estrategia específica para ti, usando tecnología avanzada.',
-  },
-  {
-    iconName: 'Handshake',
-    title: 'Tu Socio de Confianza',
-    description: 'La transparencia es la base de todo. Te mantenemos informado en cada paso del proceso de forma clara.',
   },
 ];
 
@@ -102,5 +177,5 @@ export const STATS: Stat[] = [
   { value: '20+', label: 'Años de Experiencia', description: 'Gestionando residuos y reciclaje con rigor normativo.' },
   { value: '24/7', label: 'Disponibilidad', description: 'Atención y recogidas urgentes cualquier día de la semana.' },
   { value: '100%', label: 'Cumplimiento Normativo', description: 'Procesos certificados según la normativa UNE 15713 y legislación vigente.' },
-  { value: '4', label: 'Áreas de Servicio', description: 'Destrucción confidencial, residuos, reciclaje y servicios especializados.' },
+  { value: '3', label: 'Áreas de Servicio', description: 'Destrucción confidencial, gestión de residuos y reciclaje y vaciado.' },
 ];

@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+body {
+  font-family: 'Mulish', ui-sans-serif, system-ui, sans-serif;
+}

@@ -33,35 +33,35 @@ export const ContactForm: React.FC = () => {
     <section id="contacto" className="py-20 sm:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-5 gap-12">
         <div className="lg:col-span-2">
-          <span className="text-emerald-600 text-xs sm:text-sm font-bold tracking-widest uppercase">\ Contacto \</span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-5">
+          <span className="text-green-600 text-xs sm:text-sm font-bold tracking-widest uppercase">\ Contacto \</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 mt-3 mb-5">
             Pregúntanos qué podemos hacer por ti
           </h2>
-          <p className="text-slate-600 mb-8">
+          <p className="text-neutral-600 mb-8">
             Comprometidos con la sostenibilidad y el medio ambiente. Solicita presupuesto sin compromiso.
           </p>
 
           <div className="space-y-4 text-sm">
-            <a href="tel:+34685911111" className="flex items-center gap-3 text-slate-800 hover:text-emerald-700 font-semibold">
-              <span className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+            <a href="tel:+34685911111" className="flex items-center gap-3 text-neutral-800 hover:text-green-700 font-semibold">
+              <span className="w-10 h-10 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0">
                 <Phone className="w-4.5 h-4.5" />
               </span>
               685 91 11 11
             </a>
-            <a href="mailto:info@ecoasesora.com" className="flex items-center gap-3 text-slate-800 hover:text-emerald-700 font-semibold">
-              <span className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+            <a href="mailto:info@ecoasesora.com" className="flex items-center gap-3 text-neutral-800 hover:text-green-700 font-semibold">
+              <span className="w-10 h-10 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0">
                 <Mail className="w-4.5 h-4.5" />
               </span>
               info@ecoasesora.com
             </a>
-            <div className="flex items-center gap-3 text-slate-800">
-              <span className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+            <div className="flex items-center gap-3 text-neutral-800">
+              <span className="w-10 h-10 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0">
                 <MapPin className="w-4.5 h-4.5" />
               </span>
               Carrer del Comerç, 30 · Sant Feliu de Llobregat, Barcelona
             </div>
-            <div className="flex items-center gap-3 text-slate-800">
-              <span className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+            <div className="flex items-center gap-3 text-neutral-800">
+              <span className="w-10 h-10 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0">
                 <Clock className="w-4.5 h-4.5" />
               </span>
               Abierto 24 horas
@@ -69,12 +69,12 @@ export const ContactForm: React.FC = () => {
           </div>
         </div>
 
-        <div className="lg:col-span-3 bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8">
+        <div className="lg:col-span-3 bg-neutral-50 border border-neutral-200 rounded-2xl p-6 sm:p-8">
           {status === 'sent' ? (
             <div className="flex flex-col items-center justify-center text-center py-12">
-              <CheckCircle2 className="w-14 h-14 text-emerald-600 mb-4" />
-              <h3 className="text-xl font-bold text-slate-900 mb-2">¡Gracias!</h3>
-              <p className="text-slate-600">Hemos recibido tu solicitud, te contactaremos en menos de 24 horas.</p>
+              <CheckCircle2 className="w-14 h-14 text-green-600 mb-4" />
+              <h3 className="text-xl font-bold text-neutral-900 mb-2">¡Gracias!</h3>
+              <p className="text-neutral-600">Hemos recibido tu solicitud, te contactaremos en menos de 24 horas.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -85,7 +85,7 @@ export const ContactForm: React.FC = () => {
                   value={form.name}
                   onChange={handleChange}
                   placeholder="Nombre*"
-                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm"
+                  className="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none text-sm"
                 />
                 <input
                   required
@@ -94,7 +94,7 @@ export const ContactForm: React.FC = () => {
                   value={form.phone}
                   onChange={handleChange}
                   placeholder="Teléfono*"
-                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm"
+                  className="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none text-sm"
                 />
               </div>
               <input
@@ -104,13 +104,13 @@ export const ContactForm: React.FC = () => {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="Email*"
-                className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm"
+                className="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none text-sm"
               />
               <select
                 name="service"
                 value={form.service}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm text-slate-600"
+                className="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none text-sm text-neutral-600"
               >
                 <option value="">Selecciona un servicio (opcional)</option>
                 {SERVICE_CATEGORIES.map((cat) => (
@@ -123,12 +123,12 @@ export const ContactForm: React.FC = () => {
                 onChange={handleChange}
                 placeholder="Cuéntanos qué necesitas"
                 rows={4}
-                className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none text-sm resize-none"
+                className="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none text-sm resize-none"
               />
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 text-white font-bold text-sm py-3.5 rounded-full shadow-md transition-all"
+                className="w-full inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 disabled:opacity-60 text-white font-bold text-sm py-3.5 rounded-full shadow-md transition-all"
               >
                 <Send className="w-4 h-4" />
                 {status === 'sending' ? 'Enviando...' : 'Solicitar Presupuesto'}

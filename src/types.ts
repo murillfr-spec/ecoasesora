@@ -1,20 +1,23 @@
 export interface SubService {
+  slug: string;
   title: string;
   description: string;
+  longDescription: string;
+  seoTitle: string;
+  seoDescription: string;
 }
 
 export interface ServiceCategory {
   id: string;
+  slug: string;
   iconName: string;
   title: string;
   description: string;
+  longDescription: string;
+  seoTitle: string;
+  seoDescription: string;
   items: SubService[];
-}
-
-export interface ValueProp {
-  iconName: string;
-  title: string;
-  description: string;
+  faqs: FaqItem[];
 }
 
 export interface Stat {
