@@ -78,6 +78,7 @@ export function buildSubServiceSchemas(category: ServiceCategory, sub: SubServic
       { name: category.title, path: `/servicios/${category.slug}` },
       { name: sub.title, path: `/servicios/${category.slug}/${sub.slug}` },
     ]),
+    ...(sub.faqs.length ? [faqPage(sub.faqs)] : []),
   ];
 }
 

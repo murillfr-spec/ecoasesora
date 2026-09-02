@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronRight, ChevronDown, Phone, ArrowRight, ArrowUpRight, Users } from 'lucide-react';
+import { ChevronRight, ChevronDown, Phone, ArrowRight, ArrowUpRight, Users, ExternalLink } from 'lucide-react';
 import { SERVICE_CATEGORIES } from '../data/servicesData';
 import { Eyebrow } from '../components/Eyebrow';
 
@@ -41,6 +41,23 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ slug }) =>
           {service.longDescription.map((paragraph, i) => (
             <p key={i} className="text-lg text-neutral-600 leading-relaxed">{paragraph}</p>
           ))}
+          {service.sourceLinks && service.sourceLinks.length > 0 && (
+            <ul className="pt-2 space-y-1.5">
+              {service.sourceLinks.map((link) => (
+                <li key={link.url}>
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-green-600 hover:text-green-700 hover:underline"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </section>
 

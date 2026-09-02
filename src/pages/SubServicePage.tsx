@@ -1,5 +1,5 @@
-import React from 'react';
-import { ChevronRight, Phone, ArrowRight, ShieldCheck, Clock4, Award, Users } from 'lucide-react';
+import React, { useState } from 'react';
+import { ChevronRight, ChevronDown, Phone, ArrowRight, ShieldCheck, Clock4, Award, Users } from 'lucide-react';
 import { SERVICE_CATEGORIES } from '../data/servicesData';
 import { Eyebrow } from '../components/Eyebrow';
 
@@ -15,6 +15,7 @@ interface SubServicePageProps {
 }
 
 export const SubServicePage: React.FC<SubServicePageProps> = ({ categorySlug, subSlug }) => {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
   const category = SERVICE_CATEGORIES.find((c) => c.slug === categorySlug) ?? SERVICE_CATEGORIES[0];
   const sub = category.items.find((i) => i.slug === subSlug) ?? category.items[0];
   const otherItems = category.items.filter((i) => i.slug !== sub.slug);
@@ -85,6 +86,38 @@ export const SubServicePage: React.FC<SubServicePageProps> = ({ categorySlug, su
           </div>
         </div>
       </section>
+
+      {sub.faqs.length > 0 && (
+        <section className="py-16 sm:py-20 bg-white">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 mb-10">
+              Preguntas frecuentes sobre {sub.title.toLowerCase()}
+            </h2>
+            <div className="space-y-3">
+              {sub.faqs.map((faq, i) => {
+                const isOpen = openFaq === i;
+                return (
+                  <div key={faq.question} className="bg-neutral-50 border border-neutral-200 rounded-xl overflow-hidden">
+                    <button
+                      onClick={() => setOpenFaq(isOpen ? null : i)}
+                      className="w-full flex items-center justify-between gap-4 text-left px-5 py-4 font-semibold text-neutral-900"
+                      aria-expanded={isOpen}
+                    >
+                      <h3 className="text-base font-semibold">{faq.question}</h3>
+                      <ChevronDown className={`w-5 h-5 text-green-600 shrink-0 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    {isOpen && (
+                      <div className="px-5 pb-4 text-sm text-neutral-600 leading-relaxed">
+                        {faq.answer}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       {otherItems.length > 0 && (
         <section className="py-16 sm:py-20 bg-neutral-50">

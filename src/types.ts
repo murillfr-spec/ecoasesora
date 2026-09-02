@@ -7,6 +7,7 @@ export interface SubService {
   image: string;
   seoTitle: string;
   seoDescription: string;
+  faqs: FaqItem[];
 }
 
 export interface ProcessStep {
@@ -23,6 +24,7 @@ export interface ServiceCategory {
   longDescription: string[];
   whoFor: string;
   process: ProcessStep[];
+  sourceLinks?: { label: string; url: string }[];
   image: string;
   seoTitle: string;
   seoDescription: string;
