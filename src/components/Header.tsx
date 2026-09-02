@@ -30,12 +30,12 @@ export const Header: React.FC = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24 sm:h-28">
           <a href="/" className="flex items-center gap-2.5 shrink-0">
             <img
               src={companyLogo}
               alt="Ecoasesora"
-              className={`h-11 sm:h-12 w-auto object-contain transition-all ${solid ? '' : 'brightness-0 invert drop-shadow'}`}
+              className={`h-16 sm:h-20 w-auto object-contain transition-all ${solid ? '' : 'brightness-0 invert drop-shadow'}`}
             />
           </a>
 

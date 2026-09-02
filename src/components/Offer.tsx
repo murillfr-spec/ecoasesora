@@ -1,5 +1,6 @@
 import React from 'react';
 import offerImg from '../assets/images/ofrecemos_section.webp';
+import { Eyebrow } from './Eyebrow';
 
 const STEPS = [
   {
@@ -28,7 +29,7 @@ export const Offer: React.FC = () => {
           />
         </div>
         <div className="order-1 lg:order-2">
-          <span className="text-green-600 text-xs sm:text-sm font-bold tracking-widest uppercase">\ Qué Ofrecemos \</span>
+          <Eyebrow>Qué Ofrecemos</Eyebrow>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 mt-3 mb-4 leading-tight">
             Así Trabajamos en Ecoasesora
           </h2>

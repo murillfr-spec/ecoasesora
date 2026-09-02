@@ -1,15 +1,7 @@
 import React from 'react';
 import { ChevronRight, Phone, ArrowRight, ShieldCheck, Clock4, Award, Users } from 'lucide-react';
 import { SERVICE_CATEGORIES } from '../data/servicesData';
-import confidentialImg from '../assets/images/service_confidential_shredding.webp';
-import residuosImg from '../assets/images/service_gestion_residuos.webp';
-import reciclajeImg from '../assets/images/service_reciclaje_oficina.webp';
-
-const IMAGES: Record<string, string> = {
-  'destruccion-confidencial': confidentialImg,
-  'gestion-residuos': residuosImg,
-  'reciclaje-vaciado': reciclajeImg,
-};
+import { Eyebrow } from '../components/Eyebrow';
 
 const TRUST_POINTS = [
   { icon: ShieldCheck, title: 'Cumplimiento Normativo', text: 'Procesos certificados conforme a la normativa vigente en cada servicio.' },
@@ -31,7 +23,7 @@ export const SubServicePage: React.FC<SubServicePageProps> = ({ categorySlug, su
     <>
       <section className="relative min-h-[46vh] flex items-end overflow-hidden">
         <img
-          src={IMAGES[category.id]}
+          src={sub.image}
           alt={sub.title}
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -46,7 +38,7 @@ export const SubServicePage: React.FC<SubServicePageProps> = ({ categorySlug, su
             <ChevronRight className="w-3.5 h-3.5" />
             <span className="text-white font-medium">{sub.title}</span>
           </nav>
-          <span className="text-green-400 text-xs sm:text-sm font-bold tracking-widest uppercase">\ {category.title} \</span>
+          <Eyebrow variant="dark">{category.title}</Eyebrow>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-3 max-w-3xl leading-tight">
             {sub.title} en Barcelona
           </h1>
@@ -105,9 +97,10 @@ export const SubServicePage: React.FC<SubServicePageProps> = ({ categorySlug, su
                 <li key={item.slug}>
                   <a
                     href={`/servicios/${category.slug}/${item.slug}`}
-                    className="flex items-center justify-between gap-4 bg-white hover:bg-green-50 border border-neutral-200 hover:border-green-300 rounded-xl px-5 py-4 transition-colors group"
+                    className="flex items-center gap-4 bg-white hover:bg-green-50 border border-neutral-200 hover:border-green-300 rounded-xl pr-5 overflow-hidden transition-colors group"
                   >
-                    <div>
+                    <img src={item.image} alt={item.title} className="w-20 h-16 sm:w-24 sm:h-20 object-cover shrink-0" />
+                    <div className="flex-1 py-3">
                       <h3 className="font-bold text-neutral-900 text-sm">{item.title}</h3>
                       <p className="text-xs text-neutral-500 mt-0.5">{item.description}</p>
                     </div>

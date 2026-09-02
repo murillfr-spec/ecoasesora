@@ -4,6 +4,7 @@ export interface SubService {
   description: string;
   longDescription: string[];
   whoFor: string;
+  image: string;
   seoTitle: string;
   seoDescription: string;
 }
@@ -22,6 +23,7 @@ export interface ServiceCategory {
   longDescription: string[];
   whoFor: string;
   process: ProcessStep[];
+  image: string;
   seoTitle: string;
   seoDescription: string;
   items: SubService[];

@@ -1,15 +1,7 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { SERVICE_CATEGORIES } from '../data/servicesData';
-import confidentialImg from '../assets/images/service_confidential_shredding.webp';
-import residuosImg from '../assets/images/service_gestion_residuos.webp';
-import reciclajeImg from '../assets/images/service_reciclaje_oficina.webp';
-
-const IMAGES: Record<string, string> = {
-  'destruccion-confidencial': confidentialImg,
-  'gestion-residuos': residuosImg,
-  'reciclaje-vaciado': reciclajeImg,
-};
+import { Eyebrow } from './Eyebrow';
 
 const SPANS: Record<number, string> = {
   0: 'lg:col-span-3 lg:row-span-2',
@@ -23,7 +15,7 @@ export const Services: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
           <div className="max-w-xl">
-            <span className="text-green-500 text-xs sm:text-sm font-bold tracking-widest uppercase">\ Servicios \</span>
+            <Eyebrow variant="dark">Servicios</Eyebrow>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-3 leading-tight">
               Aprovechando la Naturaleza para un Futuro Sostenible
             </h2>
@@ -42,7 +34,7 @@ export const Services: React.FC = () => {
               className={`group relative overflow-hidden rounded-3xl scroll-mt-24 aspect-[4/3] lg:aspect-auto ${SPANS[i]}`}
             >
               <img
-                src={IMAGES[cat.id]}
+                src={cat.image}
                 alt={cat.title}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />

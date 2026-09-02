@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, ArrowRight } from 'lucide-react';
 import heroImg from '../assets/images/hero_waste_facility.webp';
+import { Eyebrow } from './Eyebrow';
 
 export const Hero: React.FC = () => {
   return (
@@ -14,9 +15,7 @@ export const Hero: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 w-full">
         <div className="max-w-2xl">
-          <span className="inline-flex items-center gap-2 text-green-400 text-xs sm:text-sm font-bold tracking-widest uppercase mb-5">
-            \ Bienvenido a Ecoasesora \
-          </span>
+          <Eyebrow variant="dark" className="mb-5">Bienvenido a Ecoasesora</Eyebrow>
           <h1 className="text-5xl sm:text-6xl lg:text-[74px] font-extrabold text-white leading-[1.05] mb-6">
             Reciclaje y Gestión de Residuos con Garantía Legal
           </h1>

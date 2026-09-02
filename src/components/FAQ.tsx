@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { FAQ_DATA } from '../data/faqData';
+import { Eyebrow } from './Eyebrow';
 
 export const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -9,7 +10,7 @@ export const FAQ: React.FC = () => {
     <section id="faq" className="py-20 sm:py-28 bg-neutral-50">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <span className="text-green-600 text-xs sm:text-sm font-bold tracking-widest uppercase">\ Preguntas Frecuentes \</span>
+          <Eyebrow className="justify-center">Preguntas Frecuentes</Eyebrow>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 mt-3">
             ¿Tienes dudas? Aquí tienes las respuestas
           </h2>

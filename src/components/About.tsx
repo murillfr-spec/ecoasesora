@@ -1,6 +1,7 @@
 import React from 'react';
 import { Leaf, ShieldCheck, Truck, Clock4, ArrowRight } from 'lucide-react';
 import aboutImg from '../assets/images/about_recycling_bins.webp';
+import { Eyebrow } from './Eyebrow';
 
 const POINTS = [
   { icon: Leaf, text: 'Gestión ambiental con más de 20 años de trayectoria' },
@@ -29,7 +30,7 @@ export const About: React.FC = () => {
         </div>
 
         <div className="lg:col-span-5">
-          <span className="text-green-600 text-xs sm:text-sm font-bold tracking-widest uppercase">\ Sobre Nosotros \</span>
+          <Eyebrow>Sobre Nosotros</Eyebrow>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 mt-3 mb-5 leading-tight">
             Decisiones Sostenibles, Posibilidades Infinitas
           </h2>

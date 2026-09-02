@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react';
 import { SERVICE_CATEGORIES } from '../data/servicesData';
+import { Eyebrow } from './Eyebrow';
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 
@@ -33,7 +34,7 @@ export const ContactForm: React.FC = () => {
     <section id="contacto" className="py-20 sm:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-5 gap-12">
         <div className="lg:col-span-2">
-          <span className="text-green-600 text-xs sm:text-sm font-bold tracking-widest uppercase">\ Contacto \</span>
+          <Eyebrow>Contacto</Eyebrow>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 mt-3 mb-5">
             Pregúntanos qué podemos hacer por ti
           </h2>

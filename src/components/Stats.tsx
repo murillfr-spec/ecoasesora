@@ -1,11 +1,12 @@
 import React from 'react';
 import { STATS } from '../data/servicesData';
+import { Eyebrow } from './Eyebrow';
 
 export const Stats: React.FC = () => {
   return (
     <section className="bg-neutral-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-        <h2 className="text-green-400 text-xs sm:text-sm font-bold tracking-widest uppercase mb-8">\ Ecoasesora en Cifras \</h2>
+        <h2 className="mb-8"><Eyebrow variant="dark">Ecoasesora en Cifras</Eyebrow></h2>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {STATS.map((stat) => (
             <div key={stat.label}>

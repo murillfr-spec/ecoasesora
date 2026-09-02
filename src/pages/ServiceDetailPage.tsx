@@ -1,15 +1,7 @@
 import React, { useState } from 'react';
-import { ChevronRight, ChevronDown, Phone, ArrowRight, ArrowUpRight, Check, Users } from 'lucide-react';
+import { ChevronRight, ChevronDown, Phone, ArrowRight, ArrowUpRight, Users } from 'lucide-react';
 import { SERVICE_CATEGORIES } from '../data/servicesData';
-import confidentialImg from '../assets/images/service_confidential_shredding.webp';
-import residuosImg from '../assets/images/service_gestion_residuos.webp';
-import reciclajeImg from '../assets/images/service_reciclaje_oficina.webp';
-
-const IMAGES: Record<string, string> = {
-  'destruccion-confidencial': confidentialImg,
-  'gestion-residuos': residuosImg,
-  'reciclaje-vaciado': reciclajeImg,
-};
+import { Eyebrow } from '../components/Eyebrow';
 
 interface ServiceDetailPageProps {
   slug: string;
@@ -24,7 +16,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ slug }) =>
     <>
       <section className="relative min-h-[52vh] flex items-end overflow-hidden">
         <img
-          src={IMAGES[service.id]}
+          src={service.image}
           alt={service.title}
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -37,7 +29,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ slug }) =>
             <ChevronRight className="w-3.5 h-3.5" />
             <span className="text-white font-medium">{service.title}</span>
           </nav>
-          <span className="text-green-400 text-xs sm:text-sm font-bold tracking-widest uppercase">\ Servicio \</span>
+          <Eyebrow variant="dark">Servicio</Eyebrow>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mt-3 max-w-3xl leading-tight">
             {service.title} en Barcelona
           </h1>
@@ -95,16 +87,18 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ slug }) =>
               <a
                 key={item.slug}
                 href={`/servicios/${service.slug}/${item.slug}`}
-                className="group bg-white border border-neutral-200 hover:border-green-300 rounded-2xl p-6 transition-colors"
+                className="group bg-white border border-neutral-200 hover:border-green-300 rounded-2xl overflow-hidden transition-colors"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="w-9 h-9 rounded-full bg-green-50 text-green-600 flex items-center justify-center">
-                    <Check className="w-4.5 h-4.5" />
-                  </div>
-                  <ArrowUpRight className="w-4.5 h-4.5 text-neutral-300 group-hover:text-green-600 transition-colors" />
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <span className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-neutral-400 group-hover:text-green-600 transition-colors">
+                    <ArrowUpRight className="w-4 h-4" />
+                  </span>
                 </div>
-                <h3 className="font-extrabold text-neutral-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-neutral-500 leading-relaxed">{item.description}</p>
+                <div className="p-6">
+                  <h3 className="font-extrabold text-neutral-900 mb-2">{item.title}</h3>
+                  <p className="text-sm text-neutral-500 leading-relaxed">{item.description}</p>
+                </div>
               </a>
             ))}
           </div>
@@ -153,7 +147,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ slug }) =>
                 href={`/servicios/${other.slug}`}
                 className="group relative overflow-hidden rounded-2xl aspect-[16/9]"
               >
-                <img src={IMAGES[other.id]} alt={other.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                <img src={other.image} alt={other.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-5 flex items-center justify-between">
                   <h3 className="text-white font-extrabold">{other.title}</h3>

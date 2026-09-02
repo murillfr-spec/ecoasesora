@@ -1,9 +1,24 @@
 import { ServiceCategory, Stat } from '../types';
+import confidentialImg from '../assets/images/service_confidential_shredding.webp';
+import residuosImg from '../assets/images/service_gestion_residuos.webp';
+import reciclajeImg from '../assets/images/service_reciclaje_oficina.webp';
+import discosDurosImg from '../assets/images/sub_discos_duros.webp';
+import radiografiasImg from '../assets/images/sub_radiografias.webp';
+import mercaderiasAduanerasImg from '../assets/images/sub_mercaderias_aduaneras.webp';
+import residuosPeligrososImg from '../assets/images/sub_residuos_peligrosos.webp';
+import residuosLiquidosImg from '../assets/images/sub_residuos_liquidos.webp';
+import decantadoresGrasasImg from '../assets/images/sub_decantadores_grasas.webp';
+import residuosSolidosImg from '../assets/images/sub_residuos_solidos.webp';
+import contenedoresImg from '../assets/images/sub_contenedores.webp';
+import vaciadoLocalesImg from '../assets/images/sub_vaciado_locales.webp';
+import recogidaMueblesImg from '../assets/images/sub_recogida_muebles.webp';
+import vaciadoTrasterosImg from '../assets/images/sub_vaciado_trasteros.webp';
 
 export const SERVICE_CATEGORIES: ServiceCategory[] = [
   {
     id: 'destruccion-confidencial',
     slug: 'destruccion-confidencial',
+    image: confidentialImg,
     iconName: 'ShieldCheck',
     title: 'Destrucción Confidencial',
     description: 'Trituración segura de documentos y soportes, cumpliendo la Normativa UNE 15713.',
@@ -22,6 +37,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     items: [
       {
         slug: 'destruccion-de-materiales-confidenciales',
+        image: confidentialImg,
         title: 'Destrucción de materiales confidenciales',
         description: 'Trituración certificada de papel, documentación sensible y soportes digitales con garantía de irreconstrucción.',
         longDescription: [
@@ -34,6 +50,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       },
       {
         slug: 'destruccion-de-discos-duros',
+        image: discosDurosImg,
         title: 'Destrucción de discos duros y soportes digitales',
         description: 'Eliminación física y permanente de discos duros, USB y otros soportes digitales con datos sensibles.',
         longDescription: [
@@ -46,6 +63,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       },
       {
         slug: 'destruccion-de-radiografias',
+        image: radiografiasImg,
         title: 'Destrucción de radiografías y material sanitario',
         description: 'Eliminación segura de placas radiográficas y material sanitario sensible, con tratamiento especializado.',
         longDescription: [
@@ -71,6 +89,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
   {
     id: 'gestion-residuos',
     slug: 'gestion-de-residuos',
+    image: residuosImg,
     iconName: 'Recycle',
     title: 'Gestión de Residuos',
     description: 'Eliminación segura y trazable de todo tipo de residuos, cumpliendo la normativa vigente.',
@@ -89,6 +108,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     items: [
       {
         slug: 'destruccion-de-mercaderias-aduaneras',
+        image: mercaderiasAduanerasImg,
         title: 'Destrucción de mercaderías aduaneras',
         description: 'Eliminación segura de productos retenidos por aduanas con procesos certificados.',
         longDescription: [
@@ -101,6 +121,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       },
       {
         slug: 'residuos-peligrosos',
+        image: residuosPeligrososImg,
         title: 'Residuos peligrosos',
         description: 'Manejo y disposición responsable de residuos peligrosos, cumpliendo normativas de seguridad.',
         longDescription: [
@@ -113,6 +134,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       },
       {
         slug: 'residuos-liquidos',
+        image: residuosLiquidosImg,
         title: 'Servicio de residuos líquidos',
         description: 'Recogida y tratamiento eficiente de residuos líquidos industriales y domésticos.',
         longDescription: [
@@ -125,6 +147,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       },
       {
         slug: 'limpieza-decantadores-de-grasas',
+        image: decantadoresGrasasImg,
         title: 'Limpieza de decantadores de grasas',
         description: 'Mantenimiento profesional para prevenir obstrucciones en sistemas de separación.',
         longDescription: [
@@ -137,6 +160,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       },
       {
         slug: 'residuos-solidos-especiales',
+        image: residuosSolidosImg,
         title: 'Gestión de residuos sólidos especiales',
         description: 'Recogida y tratamiento de residuos sólidos industriales especiales, cumpliendo la normativa de gestión de residuos.',
         longDescription: [
@@ -149,6 +173,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       },
       {
         slug: 'contenedores-de-residuos',
+        image: contenedoresImg,
         title: 'Alquiler de contenedores para residuos',
         description: 'Contenedores de distintos tamaños para la recogida periódica o puntual de residuos en tu empresa.',
         longDescription: [
@@ -174,6 +199,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
   {
     id: 'reciclaje-vaciado',
     slug: 'reciclaje-y-vaciado',
+    image: reciclajeImg,
     iconName: 'Trash2',
     title: 'Reciclaje y Vaciado',
     description: 'Recogida, reciclaje y desalojo integral para entornos laborales y espacios en desuso.',
@@ -192,6 +218,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     items: [
       {
         slug: 'reciclaje-de-oficina',
+        image: reciclajeImg,
         title: 'Servicio de reciclaje de oficina',
         description: 'Recogida y reciclaje de papel, cartón, plásticos y más, para entornos laborales.',
         longDescription: [
@@ -204,6 +231,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       },
       {
         slug: 'vaciado-de-locales-naves-y-pisos',
+        image: vaciadoLocalesImg,
         title: 'Vaciado de locales, naves y pisos',
         description: 'Desalojo completo y limpieza de espacios comerciales, industriales y residenciales.',
         longDescription: [
@@ -216,6 +244,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       },
       {
         slug: 'recogida-de-muebles',
+        image: recogidaMueblesImg,
         title: 'Recogida y reciclaje de muebles',
         description: 'Retirada de muebles y enseres en desuso, con reciclaje responsable del material recuperable.',
         longDescription: [
@@ -228,6 +257,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
       },
       {
         slug: 'vaciado-de-trasteros-y-almacenes',
+        image: vaciadoTrasterosImg,
         title: 'Vaciado de trasteros y almacenes',
         description: 'Desalojo completo de trasteros y almacenes, con separación y reciclaje del material recuperable.',
         longDescription: [
