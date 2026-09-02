@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronRight, Phone, ArrowRight, ShieldCheck, Clock4, Award } from 'lucide-react';
+import { ChevronRight, Phone, ArrowRight, ShieldCheck, Clock4, Award, Users } from 'lucide-react';
 import { SERVICE_CATEGORIES } from '../data/servicesData';
 import confidentialImg from '../assets/images/service_confidential_shredding.webp';
 import residuosImg from '../assets/images/service_gestion_residuos.webp';
@@ -54,12 +54,28 @@ export const SubServicePage: React.FC<SubServicePageProps> = ({ categorySlug, su
       </section>
 
       <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-lg text-neutral-600 leading-relaxed">{sub.longDescription}</p>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+          {sub.longDescription.map((paragraph, i) => (
+            <p key={i} className="text-lg text-neutral-600 leading-relaxed">{paragraph}</p>
+          ))}
         </div>
       </section>
 
       <section className="py-16 sm:py-20 bg-neutral-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-start gap-4 bg-white border border-neutral-200 rounded-2xl p-6 sm:p-8">
+            <div className="w-10 h-10 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0">
+              <Users className="w-5 h-5" />
+            </div>
+            <div>
+              <h2 className="text-lg font-extrabold text-neutral-900 mb-2">¿Para quién es este servicio?</h2>
+              <p className="text-sm text-neutral-600 leading-relaxed">{sub.whoFor}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 mb-10">
             Ventajas de contratar este servicio con Ecoasesora
@@ -79,7 +95,7 @@ export const SubServicePage: React.FC<SubServicePageProps> = ({ categorySlug, su
       </section>
 
       {otherItems.length > 0 && (
-        <section className="py-16 sm:py-20 bg-white">
+        <section className="py-16 sm:py-20 bg-neutral-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 mb-8">
               Otros servicios dentro de {category.title}
@@ -89,7 +105,7 @@ export const SubServicePage: React.FC<SubServicePageProps> = ({ categorySlug, su
                 <li key={item.slug}>
                   <a
                     href={`/servicios/${category.slug}/${item.slug}`}
-                    className="flex items-center justify-between gap-4 bg-neutral-50 hover:bg-green-50 border border-neutral-200 hover:border-green-300 rounded-xl px-5 py-4 transition-colors group"
+                    className="flex items-center justify-between gap-4 bg-white hover:bg-green-50 border border-neutral-200 hover:border-green-300 rounded-xl px-5 py-4 transition-colors group"
                   >
                     <div>
                       <h3 className="font-bold text-neutral-900 text-sm">{item.title}</h3>

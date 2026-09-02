@@ -2,9 +2,15 @@ export interface SubService {
   slug: string;
   title: string;
   description: string;
-  longDescription: string;
+  longDescription: string[];
+  whoFor: string;
   seoTitle: string;
   seoDescription: string;
+}
+
+export interface ProcessStep {
+  title: string;
+  description: string;
 }
 
 export interface ServiceCategory {
@@ -13,7 +19,9 @@ export interface ServiceCategory {
   iconName: string;
   title: string;
   description: string;
-  longDescription: string;
+  longDescription: string[];
+  whoFor: string;
+  process: ProcessStep[];
   seoTitle: string;
   seoDescription: string;
   items: SubService[];

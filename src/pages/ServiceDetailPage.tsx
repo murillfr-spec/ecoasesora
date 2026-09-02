@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronRight, ChevronDown, Phone, ArrowRight, ArrowUpRight, Check } from 'lucide-react';
+import { ChevronRight, ChevronDown, Phone, ArrowRight, ArrowUpRight, Check, Users } from 'lucide-react';
 import { SERVICE_CATEGORIES } from '../data/servicesData';
 import confidentialImg from '../assets/images/service_confidential_shredding.webp';
 import residuosImg from '../assets/images/service_gestion_residuos.webp';
@@ -45,8 +45,43 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ slug }) =>
       </section>
 
       <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+          {service.longDescription.map((paragraph, i) => (
+            <p key={i} className="text-lg text-neutral-600 leading-relaxed">{paragraph}</p>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20 bg-neutral-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-lg text-neutral-600 leading-relaxed">{service.longDescription}</p>
+          <div className="flex items-start gap-4 bg-white border border-neutral-200 rounded-2xl p-6 sm:p-8">
+            <div className="w-10 h-10 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0">
+              <Users className="w-5 h-5" />
+            </div>
+            <div>
+              <h2 className="text-lg font-extrabold text-neutral-900 mb-2">¿Para quién es este servicio?</h2>
+              <p className="text-sm text-neutral-600 leading-relaxed">{service.whoFor}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 mb-10">
+            ¿Cómo funciona el proceso?
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {service.process.map((step, i) => (
+              <div key={step.title}>
+                <div className="w-9 h-9 rounded-full bg-green-500 text-white font-extrabold text-sm flex items-center justify-center mb-4">
+                  {i + 1}
+                </div>
+                <h3 className="font-extrabold text-neutral-900 mb-2">{step.title}</h3>
+                <p className="text-sm text-neutral-500 leading-relaxed">{step.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
