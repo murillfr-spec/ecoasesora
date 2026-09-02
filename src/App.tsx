@@ -5,6 +5,7 @@ import { HomePage } from './pages/HomePage';
 import { ServiceDetailPage } from './pages/ServiceDetailPage';
 import { SubServicePage } from './pages/SubServicePage';
 import { SERVICE_CATEGORIES } from './data/servicesData';
+import { buildServiceCategorySchemas, buildSubServiceSchemas, injectJsonLd } from './lib/seo';
 
 type Route =
   | { view: 'home' }
@@ -33,7 +34,7 @@ function getRoute(): Route {
 }
 
 const SITE_URL = 'https://ecoasesora.com';
-const DEFAULT_TITLE = 'Ecoasesora | Reciclaje, Gestión de Residuos y Destrucción Confidencial en Barcelona';
+const DEFAULT_TITLE = 'Ecoasesora | Reciclaje y Gestión de Residuos en Barcelona';
 const DEFAULT_DESCRIPTION = 'Ecoasesora: reciclaje y vaciado, gestión de residuos peligrosos y líquidos, y destrucción confidencial de documentos en Barcelona. Atención 24 horas.';
 
 export default function App() {
@@ -50,6 +51,7 @@ export default function App() {
         title = service.seoTitle;
         description = service.seoDescription;
         canonicalPath = `/servicios/${service.slug}`;
+        injectJsonLd(buildServiceCategorySchemas(service));
       }
     } else if (route.view === 'subservicio') {
       const service = SERVICE_CATEGORIES.find((s) => s.slug === route.categorySlug);
@@ -58,7 +60,10 @@ export default function App() {
         title = sub.seoTitle;
         description = sub.seoDescription;
         canonicalPath = `/servicios/${service.slug}/${sub.slug}`;
+        injectJsonLd(buildSubServiceSchemas(service, sub));
       }
+    } else {
+      injectJsonLd([]);
     }
 
     document.title = title;
