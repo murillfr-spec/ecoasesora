@@ -10,7 +10,7 @@ export interface EmailData {
 
 export async function sendContactEmail(data: EmailData) {
   const smtpHost = process.env.SMTP_HOST || 'mail.ecoasesora.com';
-  const smtpUser = process.env.SMTP_USER || 'info@ecoasesora.com';
+  const smtpUser = process.env.SMTP_USER || 'david@ecoasesora.com';
   const smtpPass = process.env.SMTP_PASS || '';
   const smtpPort = Number(process.env.SMTP_PORT) || 465;
   const recipients = (process.env.NOTIFICATION_EMAIL || 'david@ecoasesora.com').split(',');
