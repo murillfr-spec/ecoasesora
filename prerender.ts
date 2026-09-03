@@ -376,8 +376,56 @@ interface PageDef {
   bodyHtml: string | null;
 }
 
+function legalPageBodyHtml(): string {
+  return `
+      <nav aria-label="Breadcrumb"><a href="/">Inicio</a> &gt; Aviso Legal</nav>
+      <h1>Aviso Legal</h1>
+      <h2>1. Datos identificativos</h2>
+      <p>Denominación comercial: Ecoasesora. Domicilio: Carrer del Comerç, 30, 08980 Sant Feliu de Llobregat, Barcelona. Correo electrónico: info@ecoasesora.com. Teléfono: 685 91 11 11.</p>
+      <h2>2. Objeto y ámbito de aplicación</h2>
+      <p>El presente Aviso Legal regula el uso del sitio web ecoasesora.com, que Ecoasesora pone a disposición de los usuarios de Internet con la finalidad de informar sobre sus servicios de reciclaje, gestión de residuos y destrucción confidencial de documentación.</p>
+      <h2>3. Propiedad intelectual e industrial</h2>
+      <p>Todos los contenidos del sitio web son propiedad de Ecoasesora o de terceros licenciantes y están protegidos por la normativa de propiedad intelectual e industrial.</p>
+      <h2>4. Legislación aplicable</h2>
+      <p>Las presentes condiciones se rigen por la legislación española.</p>
+      <p><a href="/politica-privacidad">Política de Privacidad</a> · <a href="tel:+34685911111">685 91 11 11</a></p>
+  `;
+}
+
+function privacyPageBodyHtml(): string {
+  return `
+      <nav aria-label="Breadcrumb"><a href="/">Inicio</a> &gt; Política de Privacidad</nav>
+      <h1>Política de Privacidad</h1>
+      <p>En Ecoasesora respetamos y protegemos la privacidad de nuestros usuarios, de conformidad con el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD).</p>
+      <h2>Responsable del tratamiento</h2>
+      <p>Ecoasesora, Carrer del Comerç, 30, 08980 Sant Feliu de Llobregat, Barcelona. info@ecoasesora.com.</p>
+      <h2>Finalidad del tratamiento</h2>
+      <p>Los datos facilitados a través del formulario de contacto se utilizan para atender solicitudes de información o presupuesto.</p>
+      <h2>Derechos de las personas interesadas</h2>
+      <p>El usuario puede ejercer sus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a info@ecoasesora.com, y presentar una reclamación ante la Agencia Española de Protección de Datos.</p>
+      <h2>Política de cookies</h2>
+      <p>Este sitio web utiliza únicamente cookies técnicas necesarias para su funcionamiento. No utilizamos cookies de análisis ni de publicidad de terceros.</p>
+      <p><a href="/aviso-legal">Aviso Legal</a> · <a href="tel:+34685911111">685 91 11 11</a></p>
+  `;
+}
+
 function buildPages(): PageDef[] {
   const pages: PageDef[] = [];
+
+  pages.push({
+    urlPath: '/aviso-legal',
+    title: 'Aviso Legal | Ecoasesora',
+    description: 'Aviso legal del sitio web de Ecoasesora: datos identificativos, condiciones de uso y propiedad intelectual.',
+    schemas: [],
+    bodyHtml: legalPageBodyHtml(),
+  });
+  pages.push({
+    urlPath: '/politica-privacidad',
+    title: 'Política de Privacidad | Ecoasesora',
+    description: 'Política de privacidad de Ecoasesora: cómo tratamos tus datos personales conforme al RGPD y la LOPDGDD.',
+    schemas: [],
+    bodyHtml: privacyPageBodyHtml(),
+  });
 
   for (const cat of CATEGORIES) {
     pages.push({

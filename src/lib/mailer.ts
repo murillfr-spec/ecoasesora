@@ -13,7 +13,7 @@ export async function sendContactEmail(data: EmailData) {
   const smtpUser = process.env.SMTP_USER || 'info@ecoasesora.com';
   const smtpPass = process.env.SMTP_PASS || '';
   const smtpPort = Number(process.env.SMTP_PORT) || 465;
-  const recipients = (process.env.NOTIFICATION_EMAIL || 'info@ecoasesora.com').split(',');
+  const recipients = (process.env.NOTIFICATION_EMAIL || 'david@ecoasesora.com').split(',');
 
   const leadId = `ECOA-${Math.floor(100000 + Math.random() * 900000)}`;
 

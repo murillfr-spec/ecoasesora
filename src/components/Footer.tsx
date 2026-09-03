@@ -86,6 +86,10 @@ export const Footer: React.FC = () => {
 
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
           <div>© {new Date().getFullYear()} Ecoasesora | Reciclaje y gestión de residuos | Sant Feliu de Llobregat, Barcelona</div>
+          <div className="flex items-center gap-4">
+            <a href="/aviso-legal" className="hover:text-green-400 transition-colors">Aviso Legal</a>
+            <a href="/politica-privacidad" className="hover:text-green-400 transition-colors">Política de Privacidad</a>
+          </div>
         </div>
       </div>
     </footer>

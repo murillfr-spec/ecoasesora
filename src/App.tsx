@@ -1,16 +1,21 @@
 import React, { useEffect } from 'react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
+import { CookieBanner } from './components/CookieBanner';
 import { HomePage } from './pages/HomePage';
 import { ServiceDetailPage } from './pages/ServiceDetailPage';
 import { SubServicePage } from './pages/SubServicePage';
+import { AvisoLegalPage } from './pages/AvisoLegalPage';
+import { PoliticaPrivacidadPage } from './pages/PoliticaPrivacidadPage';
 import { SERVICE_CATEGORIES } from './data/servicesData';
 import { buildServiceCategorySchemas, buildSubServiceSchemas, injectJsonLd } from './lib/seo';
 
 type Route =
   | { view: 'home' }
   | { view: 'servicio'; categorySlug: string }
-  | { view: 'subservicio'; categorySlug: string; subSlug: string };
+  | { view: 'subservicio'; categorySlug: string; subSlug: string }
+  | { view: 'aviso-legal' }
+  | { view: 'politica-privacidad' };
 
 function getRoute(): Route {
   const path = window.location.pathname.replace(/\/$/, '') || '/';
@@ -29,6 +34,9 @@ function getRoute(): Route {
       }
     }
   }
+
+  if (segments[0] === 'aviso-legal') return { view: 'aviso-legal' };
+  if (segments[0] === 'politica-privacidad') return { view: 'politica-privacidad' };
 
   return { view: 'home' };
 }
@@ -62,6 +70,16 @@ export default function App() {
         canonicalPath = `/servicios/${service.slug}/${sub.slug}`;
         injectJsonLd(buildSubServiceSchemas(service, sub));
       }
+    } else if (route.view === 'aviso-legal') {
+      title = 'Aviso Legal | Ecoasesora';
+      description = 'Aviso legal del sitio web de Ecoasesora: datos identificativos, condiciones de uso y propiedad intelectual.';
+      canonicalPath = '/aviso-legal';
+      injectJsonLd([]);
+    } else if (route.view === 'politica-privacidad') {
+      title = 'Política de Privacidad | Ecoasesora';
+      description = 'Política de privacidad de Ecoasesora: cómo tratamos tus datos personales conforme al RGPD y la LOPDGDD.';
+      canonicalPath = '/politica-privacidad';
+      injectJsonLd([]);
     } else {
       injectJsonLd([]);
     }
@@ -95,11 +113,16 @@ export default function App() {
           <SubServicePage categorySlug={route.categorySlug} subSlug={route.subSlug} />
         ) : route.view === 'servicio' ? (
           <ServiceDetailPage slug={route.categorySlug} />
+        ) : route.view === 'aviso-legal' ? (
+          <AvisoLegalPage />
+        ) : route.view === 'politica-privacidad' ? (
+          <PoliticaPrivacidadPage />
         ) : (
           <HomePage />
         )}
       </main>
       <Footer />
+      <CookieBanner />
     </div>
   );
 }
